@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  rag_app:
+    build: .
+    container_name: marketing_analysis_rag
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - ENV=production
+    command: python src/main.py
